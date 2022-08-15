@@ -1,0 +1,12 @@
+.bikes_container{
+    margin-top: 10px;
+    margin-left: 5px;
+    gap: 0px;
+    padding-bottom: 10px;
+}
+.product{
+    border-radius: 20px;
+}
+.bike_img{
+    border-radius: 10px;
+}
