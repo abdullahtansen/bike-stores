@@ -22,7 +22,7 @@ const Product = ({bike}) => {
            <div>{description}</div>
            <div>{price}/=</div>
           </Card.Text>
-            <Button onClick={handleShow} variant="primary">Buy Now</Button>
+            <Button onClick={handleShow} variant="success">Buy Now</Button>
         </Card.Body>
       </Card>
     </Container>
