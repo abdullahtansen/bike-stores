@@ -6,7 +6,10 @@ import Home from './Pages/Home/Home/Home';
 import Products from './Pages/Home/Products/Products';
 import Register from './Pages/Authentication/Register/Register';
 import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
-import Orders from './Pages/Orders/Orders';
+import Purchase from './Pages/Purchase/Purchase';
+import BikeCollections from './Pages/BikeCollections/BikeCollections';
+
+
 
 
 
@@ -18,14 +21,15 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route
-            path="/order"
-            element={
-              <PrivateRoute>
-                <Orders />
-              </PrivateRoute>
-            }
-          />
+        <Route path="/bikeCollection" element={<BikeCollections />} />
+          <Route
+          path="/purchase"
+          element={
+            <PrivateRoute>
+              <Purchase />
+            </PrivateRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

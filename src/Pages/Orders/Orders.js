@@ -79,6 +79,7 @@ const Orders = ({ show, handleClose, bike }) => {
           <Button variant="success" onClick={handleClose} style={{marginRight:'45%'}}>
             Cancel
           </Button>
+
         </Modal.Footer>
       </Modal>
     </>

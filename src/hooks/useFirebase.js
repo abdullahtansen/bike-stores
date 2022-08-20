@@ -5,6 +5,9 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  updateProfile,
   signOut,
 } from "firebase/auth";
 
@@ -17,11 +20,25 @@ const useFirebase = () => {
 
   const auth = getAuth();
 
-  const registerUser = (email, password) => {
+  const googleProvider = new GoogleAuthProvider();
+
+
+  const registerUser = (email, password,name,navigate) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setError('');
+        const newUser = {email, displayName:name};
+        setUser(newUser);
+        // send firebase after send
+        updateProfile(auth.currentUser, {
+            displayName: name
+          }).then(() => {
+        
+          }).catch((error) => {
+          });
+          
+        navigate.replace('/');
       })
       .catch((error) => {
         setError(error.message);
@@ -31,13 +48,26 @@ const useFirebase = () => {
   const loginUser = (email, password) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((userCredential) => {       
         setError(''); 
       })
       .catch((error) => {
         setError(error.message);
       }).finally(()=> setLoading(false));
   };
+
+//   Google Login
+  const signInWithGoogle = () => {
+    setLoading(true);
+    signInWithPopup(auth, googleProvider)
+  .then((result) => {
+    const user = result.user;
+  }).catch((error) => {
+    setError(error.message);
+  }).finally(()=> setLoading(false));
+    
+  }
+
   // State Observed user
   useEffect(() => {
     setLoading(true);
@@ -68,6 +98,7 @@ const useFirebase = () => {
     loginUser,
     loading,
     error,
+    signInWithGoogle,
     logout,
   };
 };

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button, Spinner,Alert } from 'react-bootstrap';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const [loginData,setLoginData] = useState({});
+    const navigate = useNavigate();
     const {user, registerUser, loading,error} = useAuth();
 
     // Input Value Er Jonno 
@@ -22,7 +23,7 @@ const Register = () => {
             alert('your password did not match');
             return;
         }
-        registerUser(loginData.email, loginData.password);
+        registerUser(loginData.email, loginData.password,loginData.name,navigate);
         e.preventDefault();
     }
     return (
@@ -32,6 +33,10 @@ const Register = () => {
         <Col lg={6} sm={12} md={6}>
           { !loading &&
             <Form onSubmit={handleRegisterSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Your Name</Form.Label>
+              <Form.Control onBlur={handleOnBlur} name="name" type="text" placeholder="Enter your name" />
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control onBlur={handleOnBlur} name="email" type="email" placeholder="Enter email" />

@@ -6,7 +6,7 @@ import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
     const [loginData,setLoginData] = useState({});
-    const {user,loginUser,loading, error} = useAuth();
+    const {user,loginUser,signInWithGoogle,loading, error} = useAuth();
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -23,8 +23,13 @@ const Login = () => {
     }
     // Form er Data newar jonno
     const handleLoginSubmit = e =>{
-        loginUser(loginData.email,loginData.password);
+        loginUser(loginData.email,loginData.password,navigate,from);
         e.preventDefault();
+        navigate(from, { replace: true });
+    }
+
+    const handleGoogleSignIn =()=>{
+        signInWithGoogle();
         navigate(from, { replace: true });
     }
 
@@ -61,6 +66,8 @@ const Login = () => {
          {error}
         </Alert>}
           </Form>
+          <p>------------------------------</p>
+          <Button onClick={handleGoogleSignIn}>Google signup</Button>
         </Col>
         <Col lg={6} sm={12} md={6}>
           {/* <img src="" alt="" /> */}

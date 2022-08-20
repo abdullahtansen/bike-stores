@@ -7,25 +7,25 @@ import './Products.css'
 const Products = () => {
     // const [bike, setBikes] = useState([]);
     const bikes = [
-        {
+        {   id:1,
             name:'Fz-x',
             description:'This is new bike',
             price: 2000,
             img:'https://i.ibb.co/xScjt5C/tvs-4v.jpg'
         },
-        {
+        {   id:2,
             name:'Fz-x',
             description:'This is new bike',
             price: 3000,
             img:'https://i.ibb.co/xScjt5C/tvs-4v.jpg'
         },
-        {
+        {   id:3,
             name:'Fz-x',
             description:'This is new bike',
             price: 5000,
             img:'https://i.ibb.co/xScjt5C/tvs-4v.jpg'
         },
-        {
+        {   id:4,
             name:'Fz-x',
             description:'This is new bike',
             price: 4000,
@@ -42,7 +42,7 @@ const Products = () => {
         <h1 className="animate__animated animate__rubberBand">Products</h1>
        <Col md={4} lg={4} sm={12} className="bikes mt-2">
         {bikes.map((bike) => (
-          <Product key={bike._id} bike={bike} />
+          <Product key={bike.id} bike={bike}  />
         ))}
        </Col>
       </Container>
