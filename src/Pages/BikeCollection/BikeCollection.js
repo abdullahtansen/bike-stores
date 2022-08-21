@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Purchase from "../Purchase/Purchase";
+// import Purchase from "../Purchase/Purchase";
 
-const BikeCollection = ({ bike,bikes }) => {
-  const { name, img, description, price } = bike;
+const BikeCollection = ({ bike }) => {
+  const {_id, name, img, description, price } = bike;
   return (
     <>
       <Container fluid className="bikes_container">
@@ -16,7 +16,7 @@ const BikeCollection = ({ bike,bikes }) => {
               <div>{description}</div>
               <div>{price}/=</div>
             </Card.Text>
-            <Link to="/purchase">
+            <Link to={`/purchases/${_id}`}>
               <Button variant="success">
                 Buy Now
               </Button>
@@ -24,7 +24,6 @@ const BikeCollection = ({ bike,bikes }) => {
           </Card.Body>
         </Card>
       </Container>
-      <Purchase bike={bike} />
     </>
   );
 };
