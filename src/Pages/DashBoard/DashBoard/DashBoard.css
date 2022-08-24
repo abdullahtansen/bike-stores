@@ -1,0 +1,12 @@
+.nav_menu{
+    width: 27%;
+    background-color: rgb(243, 72, 20);
+    background: linear-gradient(to right, #21da7d, #4e488d, #caa9a9ad); 
+    box-shadow: 5px 2px 15px black;
+    border-radius: 20px;
+}
+.navbar{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}

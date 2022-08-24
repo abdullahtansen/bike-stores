@@ -12,6 +12,8 @@ import AddProducts from "./Pages/AddProducts/AddProducts";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import MakeAdmin from "./Pages/DashBoard/MakeAdmin/MakeAdmin";
 import MyOrder from "./Pages/DashBoard/MyOrder/MyOrder";
+import AddReview from "./Pages/DashBoard/AddReview/AddReview";
+import UpdateProfile from "./Pages/DashBoard/UpdateProfile/UpdateProfile";
 
 function App() {
   return (
@@ -39,8 +41,10 @@ function App() {
             }
           />
           <Route path="/dashboard" element={<DashBoard />}>
-            <Route path="dashboard/makeAdmin" element={<MakeAdmin />} />
-            <Route path="dashboard/myOrder" element={<MyOrder />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
+            <Route path="myOrder" element={<MyOrder />} />
+            <Route path="addReview" element={<AddReview />} />
+            <Route path="updateProfile" element={<UpdateProfile />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

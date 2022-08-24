@@ -4,18 +4,16 @@ import useAuth from '../../hooks/useAuth';
 import { useParams } from 'react-router-dom';
 
 const Purchase = () => {
-  // const navigate = useNavigate();
-  const { bikeId } = useParams();
+  const { bikesId } = useParams();
     const {user} = useAuth();
-    // const initialInfo = {userName: user.displayName, email:user.email,phone:''}
-    const [orders,setOrders] = useState({});
+    const initialInfo = {userName: user.displayName, email:user.email, phone:'',address:''}
+    const [orders,setOrders] = useState(initialInfo);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/bikes/${bikeId}`)
+      fetch(`http://localhost:5000/bikes/${bikesId}`)
         .then((res) => res.json())
         .then((data) => setOrders(data));
-    }, [bikeId]);
-
+    }, [bikesId]);
 
     const handleOnBlur = e =>{
       const field = e.target.name;
@@ -25,19 +23,32 @@ const Purchase = () => {
       setOrders(newInfo);
     }
 
-    const handlePurchaseSubmit = (e,data) =>{
-      alert('submiting');
+    const handlePurchaseSubmit = (e) =>{
       // Collect Data
        const product = {
-      name: user.displayName,
-      email: user.email,
-      productName: orders.name,
-      Price: orders.price,
-      number: data.number,
-      address: data.address,
-      img: orders.img,
+        name: user.displayName,
+        email: user.email,
+        number: e.target.phone.value,
+        address:e.target.address.value,
+        price: e.target.price.value,
+        product:e.target.product.value,
     };
-        // Send To the Server
+     // Send To the Server
+    // console.log(product);
+    fetch('http://localhost:5000/order', {
+		method: 'POST',
+		body: JSON.stringify(product),
+		headers: {
+		  "Content-type": "application/json"
+		}
+	  })
+	  .then(response => response.json())
+	  .then(data => {
+      if(data.insertedId){
+        setOrders(true)
+      }
+    })
+       
       e.preventDefault();
     };
     return (
@@ -63,16 +74,15 @@ const Purchase = () => {
           onBlur={handleOnBlur}
            type="email"
            placeholder="enter your email address"
-           autoFocus
          />
        </Form.Group>
        <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
          <Form.Label>Product Name :</Form.Label>
          <Form.Control
            type="email"
+           name="product"
            defaultValue={orders.name}
            disabled
-           autoFocus
          />
        </Form.Group>
        <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
@@ -82,7 +92,6 @@ const Purchase = () => {
            placeholder="Your Name"
            name='userName'
            defaultValue={user.displayName}
-           autoFocus
            onBlur={handleOnBlur}
          />
        </Form.Group>
@@ -92,7 +101,6 @@ const Purchase = () => {
            type="tel"
            name="phone"
            placeholder="Your Phone Number"
-           autoFocus
            onBlur={handleOnBlur}
          />
        </Form.Group>
@@ -101,8 +109,16 @@ const Purchase = () => {
          <Form.Control
            type="text"
            disabled
+           name="price"
            defaultValue={orders.price}
-           autoFocus
+         />
+       </Form.Group>
+       <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
+         <Form.Label>Product Price :</Form.Label>
+         <Form.Control
+           type="text"
+           name="address"
+           placeholder='Enter your address'
          />
        </Form.Group>
        <Button variant="success" type="submit">

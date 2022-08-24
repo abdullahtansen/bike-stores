@@ -17,7 +17,15 @@ const Navigation = () => {
             <Nav>
               {
                 user?.email ?
-                <Button onClick={logout}>Logout</Button>
+                <>
+                 <Link
+                  style={{ textDecoration: "none", color: "white",marginRight:'10px' }}
+                  to="/dashboard"
+                >
+                  <Button color="inherit">Dashboard</Button>
+                </Link>
+                  <Button onClick={logout}>Logout</Button>
+                </>
                 :
                 <Link to="/login">
                     <Button>Login</Button>

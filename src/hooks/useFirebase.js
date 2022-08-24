@@ -32,7 +32,7 @@ const useFirebase = () => {
         setUser(newUser);
         // send firebase after send
         updateProfile(auth.currentUser, {
-            displayName: name
+            displayName: name,
           }).then(() => {
         
           }).catch((error) => {
