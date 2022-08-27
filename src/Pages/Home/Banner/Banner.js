@@ -4,11 +4,10 @@ import './Banner.css';
 
 const Banner = () => {
   return (
-    <Container fluid className="mt-1">
+    <Container fluid className="contained">
       <Carousel>
         <Carousel.Item>
           <img
-            image
             className="d-block image"
             src="https://i.ibb.co/fdQ4Kmz/bike-banner-1.jpg"
             alt="First slide"

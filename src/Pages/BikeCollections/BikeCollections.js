@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import BikeCollection from '../BikeCollection/BikeCollection';
 import './BikeCollections.css'
+import Navigation from './../Shared/Navigation/Navigation';
+import Footer from './../Shared/Footer/Footer';
 
 const BikeCollections = () => {
     const [bikes,setBikes] = useState([]);
@@ -12,6 +14,8 @@ const BikeCollections = () => {
         .then((data) => setBikes(data));
     }, []);
     return (
+        <>
+        <Navigation></Navigation>
         <Container>
         <h1 className="animate__animated animate__rubberBand">Bike Collections</h1>
        <Col md={4} lg={4} sm={12} className="bikes mt-2">
@@ -20,6 +24,8 @@ const BikeCollections = () => {
         ))}
        </Col>
       </Container>
+      <Footer></Footer>
+      </>
     );
 };
 

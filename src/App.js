@@ -15,6 +15,7 @@ import MyOrder from "./Pages/DashBoard/MyOrder/MyOrder";
 import AddReview from "./Pages/DashBoard/AddReview/AddReview";
 import AdminRoute from "./Pages/Authentication/AdminRoute/AdminRoute";
 import MyProfile from "./Pages/DashBoard/MyProfile/MyProfile";
+import About from "./Pages/Home/About/About";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="addReview" element={<AddReview />} />
           </Route>
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

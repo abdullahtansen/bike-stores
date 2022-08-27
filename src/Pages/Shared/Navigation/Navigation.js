@@ -2,17 +2,24 @@ import React from 'react';
 import { Container, Nav, Navbar,Button  } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth';
+import './Navigation.css';
 
 const Navigation = () => {
   const {user,logout} = useAuth();
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand>Bike Store</Navbar.Brand>
+          <Navbar.Brand className='me-5'>
+            <Link to="/">
+              <h3 style={{color:'yellowgreen',}}>Bike Store</h3>
+              </Link>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Link to="/bikeCollection">Bike Collection</Link>
+            <Nav className="me-auto navigation">
+              <Link to="/bikeCollection" style={{marginRight:'2px'}}>Bike Collection</Link>
+              <Link to="/about"  style={{marginLeft:'15px'}}>About</Link>
+              <Link to="/contact"  style={{marginLeft:'15px'}}>Contact Us</Link>
             </Nav>
             <Nav>
               {

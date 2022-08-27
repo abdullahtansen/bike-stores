@@ -1,8 +1,21 @@
-.team_container{
-    display: flex;
-    flex-direction: row;
+.team-container{
+    padding-bottom: 20px;
 }
-.product{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+
+.images{
+    width: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+.images{
+    position: relative;
+    margin-left: 100px;
+}
+.name{
+    color: black;
+}
+.position{
+    color: red;
+    font-weight: 600;
 }

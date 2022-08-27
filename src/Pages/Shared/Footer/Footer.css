@@ -1,0 +1,21 @@
+.footer{
+    background-color: steelblue;
+    background-position: center; 
+    padding: 25px;
+    width: 100%!important;
+    background-repeat:repeat-x;
+    background-size: auto;
+}
+.footer_icon{
+    color: darkcyan;
+    font-size: 60px;
+}
+.footer_title{
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 35px;
+    word-spacing: 2px;
+    padding: 20px;
+    margin: 10px;
+}

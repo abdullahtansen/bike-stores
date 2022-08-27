@@ -36,17 +36,10 @@ const Reviews = () => {
        pagination={{clickable : true}}
        modules={[EffectCoverflow, Pagination]}
        className="mySwiper"
-      // spaceBetween={1}
-      // slidesPerView={3}
-      // navigation
-      // pagination={{ clickable: true }}
-      // onSlideChange={() => console.log("slide change")}
-      // onSwiper={(swiper) => console.log(swiper)}
-      
       >
         {newReviews.map((review, index) => (
           <SwiperSlide key={index} style={{width:"390px"}}>
-            <Review review={review}></Review>
+            <Review review={review} key={index}></Review>
           </SwiperSlide>
         ))}
         ;
