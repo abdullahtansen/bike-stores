@@ -1,30 +1,28 @@
 import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import Purchase from "../Purchase/Purchase";
+import './BikeCollection.css'
 
 const BikeCollection = ({ bike }) => {
   const {_id, name, img, description, price } = bike;
   return (
-    <>
-      <Container fluid className="bikes_container">
-        <Card className="product" style={{ width: "350px" }}>
-          <img className="bike_img" src={img} alt="Fz-x" />
-          <Card.Body>
-            <Card.Title>{name}</Card.Title>
-            <Card.Text>
-              <div>{description}</div>
-              <div>{price}/=</div>
-            </Card.Text>
+    <Container className="bikes_container">
+      <Card className="card" style={{ width: "350px", height:'440px' }}>
+       <img className="bike_img" src={img} alt="Fz-x" />
+        <Card.Body>
+          <Card.Title>
+            <h4>{name}</h4>
+            </Card.Title>
+          <Card.Text>
+           <div className="Description">{description.slice(0,100)}</div>
+           <div className="price">${price}</div>
+          </Card.Text>
             <Link to={`/purchases/${_id}`}>
-              <Button variant="success">
-                Buy Now
-              </Button>
+              <Button className="button">Buy Now</Button>
             </Link>
-          </Card.Body>
-        </Card>
-      </Container>
-    </>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };
 

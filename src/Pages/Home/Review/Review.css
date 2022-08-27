@@ -1,3 +1,14 @@
 .card{
-    width: 300px;
+    background-color:'blue'
+}
+.avatar{
+    margin-top: 15px;
+    border-radius: 50%;
+    width: 150px;
+}
+.name{
+    color: orange;
+    font-size: 20px;
+    font-weight: 600;
+    font-family:monospace;
 }

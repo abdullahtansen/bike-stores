@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import BikeCollection from '../BikeCollection/BikeCollection';
+import './BikeCollections.css'
 
 const BikeCollections = () => {
     const [bikes,setBikes] = useState([]);

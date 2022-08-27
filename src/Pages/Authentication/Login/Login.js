@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Form, Button, Container, Row, Col,Spinner,Alert  } from "react-bootstrap";
 import { Link, useLocation,useNavigate } from 'react-router-dom';
 import useAuth from "../../../hooks/useAuth";
+import './Login.css';
 
 const Login = () => {
     const [loginData,setLoginData] = useState({});
@@ -38,23 +39,22 @@ const Login = () => {
         <h1>Login Page</h1>
       <Row>
         <Col lg={6} sm={12} md={6}>
-          <Form onSubmit={handleLoginSubmit}>
+          <Container className="form">
+          <Form onSubmit={handleLoginSubmit} className="login">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control onBlur={handleOnBlur} name="email" type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+              <Form.Label className="email_label">Email address</Form.Label>
+             
+              <input className="input_type" onBlur={handleOnBlur} name="email" type="email" placeholder="Enter Your email" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control onBlur={handleOnBlur} name="password" type="password" placeholder="Password" />
+              <Form.Label className="email_label">Password</Form.Label>
+              <input className="input_type" type="password" onBlur={handleOnBlur} name="password"  placeholder="Password" />
             </Form.Group>
-            <Button variant="success" type="submit">
+            <Button variant="success" type="submit" className="button">
               Login
             </Button>
             <Link to="/register"> 
-            <Button>New User? Please Register</Button>
+            <p className="register mt-2">New User? Please Register</p>
            </Link>
            {
             loading && <Spinner animation="grow" variant="info" />
@@ -66,12 +66,11 @@ const Login = () => {
          {error}
         </Alert>}
           </Form>
-          <p>------------------------------</p>
-          <Button onClick={handleGoogleSignIn}>Google signup</Button>
+          <Button className="googleBtn" onClick={handleGoogleSignIn}>Google signup</Button>
+          </Container>
         </Col>
         <Col lg={6} sm={12} md={6}>
-          {/* <img src="" alt="" /> */}
-          <h2>Image Part</h2>
+          <img className="img" src={'https://i.ibb.co/w68J2L8/login.png'} alt="" />
         </Col>
       </Row>
     </Container>

@@ -13,7 +13,8 @@ import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import MakeAdmin from "./Pages/DashBoard/MakeAdmin/MakeAdmin";
 import MyOrder from "./Pages/DashBoard/MyOrder/MyOrder";
 import AddReview from "./Pages/DashBoard/AddReview/AddReview";
-import UpdateProfile from "./Pages/DashBoard/UpdateProfile/UpdateProfile";
+import AdminRoute from "./Pages/Authentication/AdminRoute/AdminRoute";
+import MyProfile from "./Pages/DashBoard/MyProfile/MyProfile";
 
 function App() {
   return (
@@ -41,10 +42,17 @@ function App() {
             }
           />
           <Route path="/dashboard" element={<DashBoard />}>
-            <Route path="makeAdmin" element={<MakeAdmin />} />
+          <Route index path="myProfile" element={<MyProfile />} />
+            <Route
+              path="makeAdmin"
+              element={
+                <AdminRoute>
+                  <MakeAdmin />
+                </AdminRoute>
+              }
+            />
             <Route path="myOrder" element={<MyOrder />} />
             <Route path="addReview" element={<AddReview />} />
-            <Route path="updateProfile" element={<UpdateProfile />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

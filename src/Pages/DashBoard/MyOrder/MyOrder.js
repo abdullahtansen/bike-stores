@@ -5,12 +5,17 @@ import MyOrders from '../MyOrders/MyOrders';
 
 const MyOrder = () => {
     const [orders,setOrders] = useState([]);
-    const {user} = useAuth();
+    const {user,token} = useAuth();
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/order?email=${user.email}`)
+        const url = `http://localhost:5000/order?email=${user.email}`;
+        fetch(url,{
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
         .then(res=>res.json())
-        .then(data=>setOrders(data))},[user.email]);
+        .then(data=>setOrders(data))},[user.email, token]);
         
     return (
         <div>

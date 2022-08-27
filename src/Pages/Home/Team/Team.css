@@ -1,0 +1,8 @@
+.team_container{
+    display: flex;
+    flex-direction: row;
+}
+.product{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}

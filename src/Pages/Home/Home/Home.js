@@ -3,7 +3,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Products from '../Products/Products';
 import Reviews from '../Reviews/Reviews';
-
+import Teams from './../Teams/Teams';
 
 
 const Home = () => {
@@ -13,6 +13,7 @@ const Home = () => {
            <Banner></Banner>
            <Products></Products>
            <Reviews></Reviews>
+           <Teams></Teams>
         </div>
     );
 };

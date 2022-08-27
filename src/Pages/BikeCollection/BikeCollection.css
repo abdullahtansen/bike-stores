@@ -2,13 +2,11 @@
     margin-top: 10px;
     margin-left: 5px;
     gap: 0px;
-    padding-bottom: 10px;
-    border-radius: 20px;
-   
+    height: 600px;
 }
 .card{
-     box-shadow: 5px 5px 5px 5px rgb(197, 163, 163);
-     border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(197, 163, 163);
+    border-radius: 20px;
 }
 .bike_img{
     border-radius: 10px;
@@ -16,7 +14,7 @@
 }
 .Description{
     width: 300px;
-    height: 200px;
+    height: auto;
     word-spacing: 2px;
     font-size: 15px;
     font-weight: 700;
@@ -34,10 +32,6 @@
 .card_body{
     height: 200px;
     padding: 20px;
-}
-h4{
-    color: tomato;
-    font-weight: 600;
 }
 .price{
     color: rgb(0, 162, 255);

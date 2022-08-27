@@ -1,43 +1,31 @@
-// import React, { useState } from "react";
 import React from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import './Product.css';
-// import Orders from "../../Orders/Orders";
 import { Link } from 'react-router-dom';
 
 
 const Product = ({bike}) => {
-    const { name, description, price, img, id } = bike;
-
-    // const [show, setShow] = useState(false);
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
+    const { name, description, price, img,_id} = bike;
     return (
-       <>
-       <Container fluid className="bikes_container">
-      <Card className="product" style={{ width: "350px" }}>
+       <Container className="bikes_container">
+      <Card className="card" style={{ width: "350px", height:'440px' }}>
        <img className="bike_img" src={img} alt="Fz-x" />
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Title>
+            <h4>{name}</h4>
+            </Card.Title>
           <Card.Text>
-           <div>{description}</div>
-           <div>{price}/=</div>
+           <div>{description.slice(0,100)}</div>
+           <div>${price}</div>
           </Card.Text>
-            {/* <Button onClick={handleShow} variant="success">Buy Now</Button> */}
-            <Link name={name} key={id} img={img} description={description} price={price} to="/purchase">
-              <Button>Buy Now</Button>
+            <Link to={`/purchases/${_id}`}>
+              <Button className="button">Buy Now</Button>
             </Link>
         </Card.Body>
       </Card>
     </Container>
-    {/* <Orders
-     handleClose={handleClose}
-     show={show}
-     bike={bike}
-    ></Orders> */}
-    </>
     );
 };
 
