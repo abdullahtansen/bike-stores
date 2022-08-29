@@ -54,7 +54,7 @@ const Register = () => {
               <Form.Label className="email_label">Re-Type Password</Form.Label>
               <input className='input_type' onBlur={handleOnBlur} name="password2" type="password" placeholder="Re-Type Password" />
             </Form.Group>
-            <Button className="button" type="submit">
+            <Button className="reg_button" type="submit">
               Register
             </Button>
             <Link to="/login"> 

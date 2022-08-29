@@ -1,11 +1,9 @@
 .bikes_container{
     margin-top: 10px;
-    margin-left: 5px;
     gap: 0px;
     padding-bottom: 10px;
     border-radius: 20px;
     height: 480px;
-   
 }
 .card{
      box-shadow: 5px 5px 5px 5px rgb(197, 163, 163);

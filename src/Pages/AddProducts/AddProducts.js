@@ -1,27 +1,25 @@
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const AddProducts = () => {
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = (data) => {
-      // const user = {
-      //   fname: data.firstName,
-      //   lname: data.lastName,
-      //   age: data.age,
-      // };
-      axios
-        .post("http://localhost:5000/bikes", data)
-        .then((res) => {
-          if (res.data.insertedId) {
-            alert("added successfully");
-            reset();
-          }
-        });
-      // console.log(data);
-    };
-    return (
-        <div>
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    // const user = {
+    //   fname: data.firstName,
+    //   lname: data.lastName,
+    //   age: data.age,
+    // };
+    axios.post("https://glacial-lowlands-76878.herokuapp.com/bikes", data).then((res) => {
+      if (res.data.insertedId) {
+        alert("added successfully");
+        reset();
+      }
+    });
+    // console.log(data);
+  };
+  return (
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder="name" {...register("name")} />
         <input placeholder="description" {...register("description")} />
@@ -30,7 +28,7 @@ const AddProducts = () => {
         <input type="submit" value="submit" />
       </form>
     </div>
-    );
+  );
 };
 
 export default AddProducts;

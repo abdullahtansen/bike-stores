@@ -18,7 +18,7 @@ const Purchase = () => {
   const [orders, setOrders] = useState(initialInfo);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bikes/${bikesId}`)
+    fetch(`https://glacial-lowlands-76878.herokuapp.com/bikes/${bikesId}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [bikesId]);
@@ -43,7 +43,7 @@ const Purchase = () => {
     };
     // Send To the Server
     // console.log(product);
-    fetch("http://localhost:5000/order", {
+    fetch("https://glacial-lowlands-76878.herokuapp.com/order", {
       method: "POST",
       body: JSON.stringify(product),
       headers: {

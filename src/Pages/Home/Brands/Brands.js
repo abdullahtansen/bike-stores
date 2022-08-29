@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Brand from '../Brand/Brand';
-import './Brands.css'
+import './Brands.css';
 
 const ourBrands = [
     {

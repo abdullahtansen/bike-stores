@@ -9,7 +9,7 @@ const MyOrder = () => {
     const {user,token} = useAuth();
     
     useEffect(()=>{
-        const url = `http://localhost:5000/order?email=${user.email}`;
+        const url = `https://glacial-lowlands-76878.herokuapp.com/order?email=${user.email}`;
         fetch(url,{
             headers: {
                 'authorization': `Bearer ${token}`

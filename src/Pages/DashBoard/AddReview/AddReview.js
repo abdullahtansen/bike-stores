@@ -11,7 +11,7 @@ const AddReview = () => {
         rating: data.rating,
         description: data.description,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://glacial-lowlands-76878.herokuapp.com/reviews", {
         method: "POST",
         body: JSON.stringify(review),
         headers: {

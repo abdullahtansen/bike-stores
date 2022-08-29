@@ -49,7 +49,7 @@ const Login = () => {
               <Form.Label className="email_label">Password</Form.Label>
               <input className="input_type" type="password" onBlur={handleOnBlur} name="password"  placeholder="Password" />
             </Form.Group>
-            <Button variant="success" type="submit" className="button">
+            <Button variant="success" type="submit" className="login_button">
               Login
             </Button>
             <Link to="/register"> 

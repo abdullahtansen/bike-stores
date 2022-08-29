@@ -1,13 +1,14 @@
 import React from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card,Col } from "react-bootstrap";
 import './Team.css';
 
 const Team = ({team}) => {
     const {name,img,position} = team;
   return (
     <div>
+       <Col lg={4} md={4} sm={12}>
         <Container className='team-container'>
-         <Card style={{ width: "350px",height:'300px'}}>
+          <Card style={{ width: "350px",height:'300px'}}>
             <img className="images" src={img} alt="Fz-x" />
             <Card.Body>
               <Card.Title>
@@ -19,6 +20,7 @@ const Team = ({team}) => {
             </Card.Body>
           </Card>
          </Container>
+         </Col>
     </div>
   );
 };

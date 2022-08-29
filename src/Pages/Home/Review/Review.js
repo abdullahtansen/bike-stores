@@ -11,7 +11,7 @@ const Review = ({ review }) => {
     <div>
       <div className="card">
         <div className="w-100">
-          <img className="avatar" src={user.photoURL} alt={name} />
+          <img className="avatar" src={user.photoURL} alt='ProfilePicture' />
         </div>
         <div className="card-body items-center text-center">
           <h2 className="card-title text-secondary">{user.displayName}</h2>

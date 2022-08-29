@@ -68,12 +68,12 @@ h1{
     .bikes{
      display: grid;
      grid-template-columns: repeat(1,1fr);
-     margin-left: 50px;
-    }
+   }
     .bike_collection{
         position: relative;
         display: inline-block;
         margin-top: 100px;
+        margin-right: 50px;
      }
      .bike_collection::before{
         content: '';
