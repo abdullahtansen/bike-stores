@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Carousel, Button } from "react-bootstrap";
 import './Banner.css';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -9,31 +10,37 @@ const Banner = () => {
         <Carousel.Item>
           <img
             className="d-block image"
-            src="https://i.ibb.co/fdQ4Kmz/bike-banner-1.jpg"
+            src="https://i.ibb.co/qg3WyRP/banner3.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <Button className="banner_btn">Explore</Button>
+          <Link to='/bikeCollection'>
+              <Button className="banner_btn">Explore</Button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block image"
-            src="https://i.ibb.co/qBz0pPb/bike-Banner-1.jpg"
+            src="https://i.ibb.co/1bTvsFT/banner.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
-            <Button className="banner_btn">Explore</Button>
+            <Link to='/bikeCollection'>
+              <Button className="banner_btn">Explore</Button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block image"
-            src="https://i.ibb.co/vQV7r09/bike-banner-1.jpg"
+            src="https://i.ibb.co/jy8BPFg/banner4.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
-            <Button className="banner_btn">Explore</Button>
+          <Link to='/bikeCollection'>
+              <Button className="banner_btn">Explore</Button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

@@ -33,6 +33,7 @@
     transition: all .8s;
     background-image: linear-gradient(90deg,#814096,#f83292);
     margin-left: 100px;
+    margin-right: 0px;
 }
 .card_body{
     height: 200px;

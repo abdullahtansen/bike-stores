@@ -31,11 +31,11 @@ const Navigation = () => {
                 >
                   <Button className='buttons'>Dashboard</Button>
                 </Link>
-                  <Button className='buttons' onClick={logout}>Logout</Button>
+                  <Button className='logOut_button' onClick={logout}>Logout</Button>
                 </>
                 :
                 <Link to="/login">
-                    <Button className='button'>Login</Button>
+                    <Button className='buttons'>Login</Button>
                 </Link>
               }
             </Nav>
