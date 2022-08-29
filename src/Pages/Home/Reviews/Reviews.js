@@ -7,6 +7,7 @@ import "swiper/less/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-coverflow";
 import { EffectCoverflow, Pagination } from "swiper";
+import './Reviews.css';
 
 
 const Reviews = () => {
@@ -19,7 +20,7 @@ const Reviews = () => {
   const newReviews = [...reviews].reverse();
   return (
     <div>
-      <h2>Reviews</h2>
+      <h2 className='reviews-title'>Reviews</h2>
       <Swiper 
        
        effect={"coverflow"}

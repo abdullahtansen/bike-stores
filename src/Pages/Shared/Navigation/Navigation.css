@@ -1,4 +1,23 @@
+.navBar{
+    padding: 20px;
+}
 .navigation a{
     color:white;
     font-family: monospace;
+}
+.button{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #fff!important;
+    transition: all .8s;
+    background-image: linear-gradient(90deg,#814096,#f83292);
+}
+.buttons{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #fff!important;
+    transition: all .8s;
+    background-image: linear-gradient(90deg,#814096,#f83292);
 }

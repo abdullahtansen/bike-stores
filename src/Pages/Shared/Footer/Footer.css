@@ -6,12 +6,8 @@
     background-repeat:repeat-x;
     background-size: auto;
 }
-.footer_icon{
-    color: darkcyan;
-    font-size: 60px;
-}
 .footer_title{
-    color: white;
+    color: #eae609d8;
     font-weight: 900;
     letter-spacing: 1px;
     font-size: 35px;

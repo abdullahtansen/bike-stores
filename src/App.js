@@ -16,6 +16,7 @@ import AddReview from "./Pages/DashBoard/AddReview/AddReview";
 import AdminRoute from "./Pages/Authentication/AdminRoute/AdminRoute";
 import MyProfile from "./Pages/DashBoard/MyProfile/MyProfile";
 import About from "./Pages/Home/About/About";
+import Contact from "./Pages/Home/Contact/Contact";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
             }
           />
           <Route path="/dashboard" element={<DashBoard />}>
-          <Route index path="myProfile" element={<MyProfile />} />
+          <Route path="myProfile" element={<MyProfile />} />
             <Route
               path="makeAdmin"
               element={
@@ -56,6 +57,7 @@ function App() {
             <Route path="addReview" element={<AddReview />} />
           </Route>
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

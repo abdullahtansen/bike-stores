@@ -43,7 +43,6 @@ const Login = () => {
           <Form onSubmit={handleLoginSubmit} className="login">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className="email_label">Email address</Form.Label>
-             
               <input className="input_type" onBlur={handleOnBlur} name="email" type="email" placeholder="Enter Your email" />
             </Form.Group>
             <Form.Group className="mb-3">

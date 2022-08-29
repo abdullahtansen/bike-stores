@@ -1,12 +1,28 @@
 .nav_menu{
     width: 27%;
-    background-color: rgb(243, 72, 20);
-    background: linear-gradient(to right, #21da7d, #4e488d, #caa9a9ad); 
+    background-image: linear-gradient(90deg,#814096,#992a60);
     box-shadow: 5px 2px 15px black;
     border-radius: 20px;
+    padding: 20px;
+    height: 100vh !important;
 }
 .navbar{
     color: white;
     text-align: center;
     font-size: 22px;
+}
+.nav_menubar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.navMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    margin-top: 300%;
+
 }

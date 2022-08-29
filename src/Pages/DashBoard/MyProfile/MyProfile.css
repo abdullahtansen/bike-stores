@@ -1,0 +1,22 @@
+.profile_container{
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.profileImg{
+    height: 100px;
+    width: 100px;
+    margin-left: 30%;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+.profile_btn{
+    margin-bottom: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: #fff!important;
+    transition: all .8s;
+    background-image: linear-gradient(90deg,#814096,#f83292);
+}

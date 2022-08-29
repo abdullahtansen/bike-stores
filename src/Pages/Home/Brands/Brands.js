@@ -35,7 +35,7 @@ const ourBrands = [
 const Brands = () => {
     return (
         <div>
-        <h2 style={{color:'tomato',fontWeight:'700',marginBottom:'20px'}}>Our Brand</h2>
+        <h2 className="brand_tittle" style={{color:'tomato',fontWeight:'700',marginBottom:'20px'}}>Our Brand</h2>
         <Container className="brand_container">
           {ourBrands.map((brand) => (
             <Brand key={brand.id} brand={brand} />

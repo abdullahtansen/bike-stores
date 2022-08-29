@@ -1,0 +1,17 @@
+.reviews-title {
+    display: inline-block;
+    color: tomato;
+    margin-top: 30px;
+    padding: 10px;
+    position: relative;
+}
+
+.reviews-title::before {
+    content: '';
+    position: absolute;
+    width: 105px;
+    height: 3px;
+    left: 15px;
+    margin-top: 40px;
+    background-color: #EB3493;
+}

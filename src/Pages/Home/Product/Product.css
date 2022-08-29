@@ -24,6 +24,7 @@
     letter-spacing: 1px;
 }
 .button{
+    margin-bottom: 10px;
     font-size: 15px;
     letter-spacing: 1px;
     padding: 10px 30px;
@@ -31,6 +32,7 @@
     color: #fff!important;
     transition: all .8s;
     background-image: linear-gradient(90deg,#814096,#f83292);
+    margin-left: 100px;
 }
 .card_body{
     height: 200px;
@@ -40,10 +42,15 @@ h4{
     color: tomato;
     font-weight: 600;
 }
-.price{
-    color: rgb(0, 162, 255);
-    font-size: 20px;
+.price_btn{
+    color: rgb(221, 6, 214);
+    font-size: 25px;
     font-weight: 700;
-    padding: 5px;
     word-spacing: 1px;
+    margin-left: 25px;
+}
+.product_footer{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
 }

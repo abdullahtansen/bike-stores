@@ -1,8 +1,17 @@
-h1{
+.products_title{
+    position: relative;
+    display: inline-block;
     color: tomato;
     font-weight: 600;
-    margin-top: 20px;
-    padding: 5px;
+}
+.products_title::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: lightseagreen;
+    width: 140px;
+    left: 15px;
+    bottom: -10px;
 }
 .bikes{
     display: grid;

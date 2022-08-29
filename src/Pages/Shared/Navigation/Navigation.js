@@ -7,7 +7,7 @@ import './Navigation.css';
 const Navigation = () => {
   const {user,logout} = useAuth();
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar fixed="top" className='navBar' collapseOnSelect expand="lg" bg="dark" variant="dark"> 
         <Container>
           <Navbar.Brand className='me-5'>
             <Link to="/">
@@ -29,13 +29,13 @@ const Navigation = () => {
                   style={{ textDecoration: "none", color: "white",marginRight:'10px' }}
                   to="/dashboard"
                 >
-                  <Button color="inherit">Dashboard</Button>
+                  <Button className='buttons'>Dashboard</Button>
                 </Link>
-                  <Button onClick={logout}>Logout</Button>
+                  <Button className='buttons' onClick={logout}>Logout</Button>
                 </>
                 :
                 <Link to="/login">
-                    <Button>Login</Button>
+                    <Button className='button'>Login</Button>
                 </Link>
               }
             </Nav>

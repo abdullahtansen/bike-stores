@@ -2,6 +2,21 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     border-radius: 20px;
+    margin-top: 20px;
+}
+.team_title{
+   position: relative;
+   display: inline-block;
+   margin-top: 50px;
+}
+.team_title::before{
+   content: '';
+   position: absolute;
+   width: 120px;
+   height: 3px;
+   background-color: #EB3493;
+   margin-top: 40px;
+   left: 15px;
 }
 
 @media screen and (min-width: 480px) and (max-width: 760px) {

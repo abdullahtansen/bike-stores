@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import './AddReview.css';
+import { Form, Container } from 'react-bootstrap';
 
 const AddReview = () => {
   const { register, handleSubmit,reset } = useForm();
@@ -23,12 +25,20 @@ const AddReview = () => {
         });
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input placeholder='Name' type="text" {...register("name")} />
-      <input placeholder='Rating Number' type="number" {...register("rating")} />
-      <input placeholder='Description' type="text" {...register("description")} />
-      <input type="submit" />
-    </form>
+   <Container className='ReviewContainer'>
+     <Form onSubmit={handleSubmit(onSubmit)} className='review_section'>
+     <Form.Group>
+     <input className='input_type' placeholder='Enter your Product Name' type="text" {...register("name")} />
+     </Form.Group>
+    <Form.Group>
+        <input placeholder='Rating Number' className='input_type' type="number" {...register("rating")} />
+    </Form.Group>
+    <Form.Group>
+    <input placeholder='Description' className='input_type' type="text" {...register("description")} />
+    </Form.Group>
+      <input className="buttoned" type="submit" />
+    </Form>
+   </Container>
   );
 };
 

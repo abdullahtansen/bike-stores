@@ -17,7 +17,7 @@ const BikeCollections = () => {
         <>
         <Navigation></Navigation>
         <Container>
-        <h1 className="animate__animated animate__rubberBand">Bike Collections</h1>
+        <h1 className="bike_collection">Bike Collections</h1>
        <Col md={4} lg={4} sm={12} className="bikes mt-2">
         {bikes.map((bike) => (
           <BikeCollection key={bike._id} bike={bike} />
